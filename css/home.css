@@ -1,0 +1,53 @@
+.hero { display: grid; gap: 24px; padding-top: 24px; }
+.hero__text { padding: 16px 0; }
+.hero__eyebrow { color: var(--primary); font-size: .875rem; font-weight: 650; margin-bottom: 20px; }
+.hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.75rem, 5.5vw, 4.5rem); font-weight: 400; line-height: 1.08; max-width: 11ch; }
+.hero__text > p:not(.hero__eyebrow) { color: var(--muted); margin-block: 24px; max-width: 42ch; font-size: 1.0625rem; }
+.hero__image { margin: 0; position: relative; border-radius: 16px; overflow: hidden; min-height: 260px; }
+.hero__image img { width: 100%; height: 100%; object-fit: cover; }
+.hero__image figcaption { position: absolute; bottom: 16px; left: 16px; right: 16px; width: fit-content; padding: 8px 12px; border-radius: 6px; color: #fff; background: #233a2e; font-size: .8125rem; }
+.home-search { display: grid; gap: 16px; margin-block: 24px 8px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.home-search__field { min-width: 0; }
+.home-search label { display: block; font-size: .875rem; font-weight: 650; margin-bottom: 6px; }
+.home-search .btn { align-self: end; }
+.section-link { font-weight: 600; font-size: .9375rem; min-height: 44px; display: inline-flex; align-items: center; }
+.carousel { position: relative; }
+.carousel__track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 20px; margin: 0 -4px; list-style: none; scrollbar-width: thin; scrollbar-color: var(--input-border) transparent; }
+.carousel__slide { flex: 0 0 86%; min-width: 0; scroll-snap-align: start; }
+.card img { width: 100%; height: auto; aspect-ratio: 1.5; object-fit: cover; border-radius: 12px; margin-bottom: 16px; }
+.card h3 { font-size: 1.125rem; }
+.card p { color: var(--muted); font-size: .9375rem; margin-top: 8px; }
+.card .card__meta { color: var(--primary); font-size: .8125rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.card a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; font-weight: 600; font-size: .9375rem; }
+.carousel__btn { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; margin-bottom: 16px; }
+.carousel__btn--next { margin-left: 4px; }
+.carousel__dots { display: inline-flex; gap: 4px; margin-top: 8px; }
+.carousel__dot { min-width: 44px; height: 44px; padding: 0; border: 0; background: transparent; position: relative; }
+.carousel__dot::after { content: ''; width: 8px; height: 8px; border: 1px solid var(--primary); border-radius: 50%; display: block; margin: auto; }
+.carousel__dot[aria-pressed="true"]::after { background: var(--primary); }
+.carousel__pause-btn { margin-left: 8px; font-size: .8125rem; }
+.map-section { border-top: 1px solid var(--border); }
+.map-layout { display: grid; gap: 24px; }
+.map-copy { background: var(--surface-soft); border-radius: 12px; padding: 24px; }
+.map-copy p { color: var(--muted); margin-top: 16px; }
+.map-note { font-size: .875rem; }
+.map-copy button { margin-block: 24px 12px; }
+.map-copy a { display: block; padding-block: 8px; font-size: .9375rem; }
+.map-container { height: 340px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-soft); z-index: 0; }
+.map-help, .map-status { font-size: .8125rem; color: var(--muted); margin-top: 8px; }
+.map-status:empty { display: none; }
+.weather-section { padding: 24px; background: var(--surface-soft); border-radius: 12px; display: grid; gap: 24px; }
+.weather-note { color: var(--muted); font-size: .9375rem; margin-top: 16px; max-width: 55ch; }
+.weather-data { align-self: center; }
+.weather-data button { margin-block: 16px; }
+.weather-source { color: var(--muted); font-size: .8125rem; margin: 0; }
+#clima-data { font-variant-numeric: tabular-nums; }
+.leaflet-container { font-family: inherit; }
+.leaflet-container .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; background: var(--surface); color: var(--text); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--surface); color: var(--text); }
+.leaflet-container .leaflet-control-attribution { background: var(--surface); color: var(--muted); }
+.leaflet-control-attribution a { color: var(--primary); }
+.leaflet-container a.leaflet-popup-close-button { width: 44px; height: 44px; color: var(--text); }
+.leaflet-popup-content { padding-right: 16px; }
+@media (min-width: 640px) { .carousel__slide { flex-basis: 72%; } .hero { grid-template-columns: 1fr 1fr; align-items: stretch; } .hero__text { padding-block: 32px; } .home-search { grid-template-columns: 1.2fr 1fr; } .home-search .btn { grid-column: 1 / -1; } .hero__image img { position: absolute; inset: 0; } }
+@media (min-width: 960px) { .hero { padding-top: 40px; gap: 56px; grid-template-columns: .9fr 1.1fr; } .hero__text { padding-block: 36px; } .hero__image { min-height: 420px; } .home-search { grid-template-columns: 1.5fr 1fr auto; gap: 24px; padding: 20px 24px; margin-top: 32px; } .home-search .btn { grid-column: auto; min-height: 48px; } .carousel__slide { flex-basis: calc((100% - 48px) / 3); } .map-layout { grid-template-columns: 320px 1fr; gap: 24px; } .map-container { height: 400px; } .weather-section { grid-template-columns: 1.2fr 1fr; padding: 32px; gap: 64px; } }
